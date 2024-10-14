@@ -1,6 +1,4 @@
-Here's a template for a README file for your Discord bot project. You can customize it further to match your project's specific details and requirements.
 
-```markdown
 # Discord Bot: Web Wizard
 
 ## Overview
