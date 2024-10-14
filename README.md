@@ -21,8 +21,8 @@ The **Web Wizard** Discord bot is a versatile and feature-rich bot designed to e
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/web-wizard-bot.git
-   cd web-wizard-bot
+   https://github.com/PgNetwork01/discord-bot.git
+   cd discord-bot
    ```
 
 2. **Install Dependencies**
