@@ -43,10 +43,6 @@ The **Web Wizard** Discord bot is a versatile and feature-rich bot designed to e
    - Create a new application.
    - Under the "Bot" tab, click "Add Bot" and save your token.
 
-4. **Add Your Bot Token**
-
-   Open `bot.py` and replace `'YOUR_BOT_TOKEN'` with your actual bot token.
-
 ## Usage
 
 To run the bot, use the following command:
