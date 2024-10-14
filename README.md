@@ -32,6 +32,10 @@ The **Web Wizard** Discord bot is a versatile and feature-rich bot designed to e
    ```bash
    pip install -U discord.py
    ```
+   Create a file in the root directory name config.py and paste this:
+   ```py
+   TOKEN = "YOUR_DISCORD_TOKEN"
+   ```
 
 3. **Create a Discord Bot Account**
 
