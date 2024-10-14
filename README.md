@@ -76,14 +76,3 @@ For any inquiries or issues, please contact [your_email@example.com](mailto:your
 
 ---
 
-Feel free to update this README with additional commands, setup instructions, or specific information related to your bot's functionality and features.
-```
-
-### Instructions for Customization
-1. **Replace `yourusername`**: Change it to your GitHub username in the clone link.
-2. **Update Email**: If you have a contact email, replace `your_email@example.com` with it.
-3. **Add More Commands**: If your bot has more commands or features, include them in the **Features** section.
-4. **Add Usage Instructions**: If there are more steps for usage or specific command formats, provide that information under the **Usage** section.
-5. **Include Contribution Guidelines**: If you have specific contribution guidelines, add them in the **Contributing** section.
-
-Once you've made these customizations, you can create a `README.md` file in your repository and copy this content into it. This will help potential contributors and users understand your project better!
