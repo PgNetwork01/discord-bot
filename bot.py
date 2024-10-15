@@ -1,12 +1,9 @@
 from discord.ext import commands
 import discord
-import random
-import datetime
-import asyncio
-import os
-from general import GeneralCommands
 from config import TOKEN
 import logging
+from general import GeneralCommands
+from moderation import ModerationCommands
 
 # Enable logging
 logging.basicConfig(level=logging.DEBUG)
@@ -22,6 +19,8 @@ bot = commands.Bot(command_prefix='.', intents=intents)
 async def setup(bot):
     await bot.add_cog(GeneralCommands(bot))
     print("GeneralCommands cog loaded.")
+    await bot.add_cog(ModerationCommands(bot))
+    print("ModerationCommands cog loaded.")
     
 @bot.event
 async def on_command_error(ctx, error):
