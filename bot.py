@@ -2,11 +2,12 @@ from discord.ext import commands
 import discord
 from config import TOKEN
 import logging
-from general import GeneralCommands
+from general import GeneralCommands, version
 from moderation import ModerationCommands
+from economy import EconomyCommands
 
 # Enable logging
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 intents = discord.Intents.default()
 intents.members = True  # Enable the members intent if you need to access member-related events
@@ -18,9 +19,11 @@ bot = commands.Bot(command_prefix='.', intents=intents)
 
 async def setup(bot):
     await bot.add_cog(GeneralCommands(bot))
-    print("GeneralCommands cog loaded.")
+    print("Connected to General system!")
     await bot.add_cog(ModerationCommands(bot))
-    print("ModerationCommands cog loaded.")
+    print("Connected to Moderation systems!")
+    await bot.add_cog(EconomyCommands(bot))
+    print("Connected to Economy system!")
     
 @bot.event
 async def on_command_error(ctx, error):
@@ -36,6 +39,7 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
+    print(f'Version {version}')
     print('------')
     await setup(bot)
 
