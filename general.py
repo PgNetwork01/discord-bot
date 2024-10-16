@@ -4,10 +4,14 @@ import discord
 import random
 import datetime
 import asyncio
+import pytz
+
+version = "1.1.0"
 
 class GeneralCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
 
     # @commands.command(name='help', description="Lists all available commands.")
     # async def help(self, ctx):
@@ -169,7 +173,7 @@ class GeneralCommands(commands.Cog):
 
     @commands.command(name='version', description="Displays bot version.")
     async def version(self, ctx):
-        await ctx.send("Bot version: 1.0.0")
+        await ctx.send(f"Bot version: {version}")
 
     @commands.command(name='contact', description="Information on how to contact the bot team.")
     async def contact(self, ctx):
@@ -281,8 +285,10 @@ class GeneralCommands(commands.Cog):
 
     @commands.command(name='currenttime', description="Displays the current time.")
     async def currenttime(self, ctx):
-        current_time = datetime.datetime.now().strftime("%H:%M:%S")
-        await ctx.send(f"Current time: {current_time}")
+    # Define the IST timezone
+      ist = pytz.timezone('Asia/Kolkata')
+      current_time = datetime.datetime.now(ist).strftime("%H:%M:%S")
+      await ctx.send(f"Current time (IST): {current_time}")
 
     @commands.command(name='timezone', description="Displays the bot's timezone.")
     async def timezone(self, ctx):

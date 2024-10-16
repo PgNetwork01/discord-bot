@@ -2,7 +2,7 @@ from discord.ext import commands
 import discord
 from config import TOKEN
 import logging
-from general import GeneralCommands
+from general import GeneralCommands, version
 from moderation import ModerationCommands
 from economy import EconomyCommands
 
@@ -39,6 +39,7 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
+    print(f'Version {version}')
     print('------')
     await setup(bot)
 
