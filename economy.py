@@ -49,7 +49,7 @@ class EconomyCommands(commands.Cog):
         earned_money = random.randint(10, 50)
         user_data = await self.get_user_data(ctx.author.id)
         users_collection.update_one({"user_id": ctx.author.id}, {"$set": {"balance": user_data["balance"] + earned_money}})
-        await ctx.send(f"You earned {earned_money} {emoji.BANK_EMOJI}! Your new balance is {user_data['balance'] + earned_money} {emoji.BANK_EMOJI}")
+        await ctx.send(f"You earned {earned_money} {emoji.COIN_EMOJI}! Your new balance is {user_data['balance'] + earned_money} {emoji.BANK_EMOJI}")
 
     @commands.command(name='transfer', description="Transfer money to another user.")
     async def transfer(self, ctx, member: discord.Member, amount: int):
@@ -74,7 +74,7 @@ class EconomyCommands(commands.Cog):
             return
         reward = 100  # Fixed daily reward
         users_collection.update_one({"user_id": ctx.author.id}, {"$set": {"balance": user_data["balance"] + reward, "last_daily": now}})
-        await ctx.send(f"You claimed your daily reward of {reward} {emoji.BANK_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
+        await ctx.send(f"You claimed your daily reward of {reward} {emoji.COIN_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
 
     @commands.command(name='weekly', description="Claim your weekly reward.")
     async def weekly(self, ctx):
@@ -85,7 +85,7 @@ class EconomyCommands(commands.Cog):
             return
         reward = 500  # Fixed weekly reward
         users_collection.update_one({"user_id": ctx.author.id}, {"$set": {"balance": user_data["balance"] + reward, "last_weekly": now}})
-        await ctx.send(f"You claimed your weekly reward of {reward} {emoji.BANK_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
+        await ctx.send(f"You claimed your weekly reward of {reward} {emoji.COIN_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
 
     @commands.command(name='monthly', description="Claim your monthly reward.")
     async def monthly(self, ctx):
@@ -96,5 +96,5 @@ class EconomyCommands(commands.Cog):
             return
         reward = 2000  # Fixed monthly reward
         users_collection.update_one({"user_id": ctx.author.id}, {"$set": {"balance": user_data["balance"] + reward, "last_monthly": now}})
-        await ctx.send(f"You claimed your monthly reward of {reward} {emoji.BANK_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
+        await ctx.send(f"You claimed your monthly reward of {reward} {emoji.COIN_EMOJI}! Your new balance is {user_data['balance'] + reward} {emoji.BANK_EMOJI}")
 
