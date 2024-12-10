@@ -9,6 +9,7 @@ from economy import EconomyCommands
 # Enable logging
 # logging.basicConfig(level=logging.DEBUG)
 
+
 intents = discord.Intents.default()
 intents.members = True  # Enable the members intent if you need to access member-related events
 intents.message_content = True  # Enable the members intent if you need to access member-related events
