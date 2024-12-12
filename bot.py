@@ -7,6 +7,7 @@ from moderation import ModerationCommands
 from economy import EconomyCommands
 
 # Enable logging
+
 # logging.basicConfig(level=logging.DEBUG)
 
 
